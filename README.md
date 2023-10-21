@@ -11,7 +11,9 @@ ssh into slave vm
 ![slave vm](./images/image3.png)
 
 #On the Master node, create a bash script to automate the deployment of a LAMP (Linux, Apache, MySQL, PHP) stack.
-This was done executing the script [automation.sh]()
+
+This was done executing the script [automation.sh](https://github.com/molly8213/Altexam/blob/main/automation.sh)
+
 Proof of succuceesful installation LAMP on the master vm
 ![apache2](./images/image4.png)
 ![mysql](./images/image5.png)
