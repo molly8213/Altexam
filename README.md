@@ -4,10 +4,15 @@ My documentation for deploying a LAMP STACK
 
 This was done by executing [master-slave.sh](https://github.com/molly8213/Altexam/blob/main/master-slave.sh)
 The script above shows me initializing vagrant into my directoy and redirecting the configuration into vagrantfile
-Below are proof of actual working script
+
 ssh into master vm
 ![master vm](./images/image2.png)
 ssh into slave vm
 ![slave vm](./images/image3.png)
 
 #On the Master node, create a bash script to automate the deployment of a LAMP (Linux, Apache, MySQL, PHP) stack.
+This was done executing the script [automation.sh]()
+Proof of succuceesful installation LAMP on the master vm
+![apache2](./images/image4.png)
+![mysql](./images/image5.png)
+![php](./images/image6.png)
