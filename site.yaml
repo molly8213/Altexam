@@ -1,0 +1,38 @@
+---
+
+- hosts: all
+  become: yes
+  pre_tasks:
+    
+  - name: update and ugrade server
+    apt:
+      update_cache: yes
+      upgrade: yes 
+
+  - name: set cron job to check the uptime of the server every 12am
+    cron:
+      name: set cron job to check the uptime of the server every 12am
+      minute: "0"
+      hour: "0"
+      day: "*"
+      month: "*"
+      weekday: "*"
+      job: "/usr/bin/uptime > /var/log/uptime_check.log 2>&1"
+      state: present
+
+
+  - name: copy the bash script to the slave machine
+    copy:
+      src: script.sh
+      dest: ~/
+      owner: root
+      group: root
+      mode: 0744
+ - name: Set executable permission
+   command: chmod +x ~/script.sh
+
+ - name: Execute the script
+   command: ./script.sh molly devmolly < /dev/null
+
+
+     
