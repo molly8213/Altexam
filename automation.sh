@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#update and upgrade of ther server
 sudo apt update
 sudo apt upgrade -y
 
@@ -25,6 +26,21 @@ sudo apt install curl -y
 curl -sS https://getcomposer.org/installer | php 
 sudo mv composer.phar /usr/local/bin/composer
 composer --version
+
+cd /var/www/html/laravel && cp .env.example .env
+
+sudo sed -i 's/DB_DATABASE=laravel/DB_DATABASE=molly/' var/www/html/laravel/.env
+sudo sed -i 's/DB_USERNAME=root/DB_USERNAME=molly/' var/www/html/laravel/.env
+sudo sed -i 's/DB_PASSWORD=devmolly /' var/www/html/laravel/.env
+
+sudo chown -R www-data:www-data /var/www/html/laravel
+sudo chmod -R 775 /var/www/html/laravel
+
+sudo chmod -R 775 /var/www/html/laravel/storage
+
+sudo chmod -R 775 /var/www/html/laravel/bootstrap/cache
+
+
 
 #Configure Apache
 cat << EOF > /etc/apache2/sites-available/laravel.conf
@@ -68,4 +84,7 @@ echo "Username: $1"
 echo "Database: $1"
 echo "Password: $FORCA"
 
-
+#execute and migrate for php
+cd /var/www/html/laravel && php artisan key:generate
+cd /var/www/html/laravel && php artisan config:cache
+cd /var/www/html/laravel && php artisan migrate

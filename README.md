@@ -20,4 +20,7 @@ Proof of succuceesful installation LAMP on the master vm
 ![php](./images/image6.png)
 
 #This script should clone a PHP application from GitHub, install all necessary packages, and configure Apache web server and MySQL. 
-#Ensure the bash script is reusable and readable.
+
+All necessary packages have been installed and apache configured
+![apache2](./images/image7.png)
+
