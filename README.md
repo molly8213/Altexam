@@ -21,6 +21,8 @@ Proof of succuceesful installation LAMP on the master vm
 
 #This script should clone a PHP application from GitHub, install all necessary packages, and configure Apache web server and MySQL. 
 
-All necessary packages have been installed and apache configured
-![apache2](./images/image7.png)
+For the ansible task
+i had created a directory containing a playbook,inventory and ansible.cfg file.
+Ran this through the master server
+![php](./images/image8.png)
 
