@@ -27,11 +27,12 @@ sudo mv composer.phar /usr/local/bin/composer
 composer --version < /dev/null
 
 
-#Configure Apache
-cat << EOF > /etc/apache2/sites-available/laravel.conf
+
+# Configure Apache
+cat <<EOF > /etc/apache2/sites-available/laravel.conf
 <VirtualHost *:80>
     ServerAdmin tshonuyi43@gmail.com
-    ServerName 192.168.20.10
+    ServerName 192.168.20.11
     DocumentRoot /var/www/html/laravel/public
 
     <Directory /var/www/html/laravel>
@@ -39,11 +40,12 @@ cat << EOF > /etc/apache2/sites-available/laravel.conf
     AllowOverride All
     Require all granted
     </Directory>
- 
+
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-EOF 
+EOF
+
 #enable the Apache rewrite module, and activate the Laravel virtual host 
 sudo a2enmod rewrite
 sudo a2ensite laravel.conf
