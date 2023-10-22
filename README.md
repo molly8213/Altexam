@@ -24,5 +24,5 @@ Proof of succuceesful installation LAMP on the master vm
 For the ansible task
 i had created a directory containing a playbook,inventory and ansible.cfg file.
 Ran this through the master server
-![php](./images/image8.png)
+![php](./images/image8.jpeg)
 
